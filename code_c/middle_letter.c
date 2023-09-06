@@ -2,27 +2,32 @@
 
 
 #include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
 #include <string.h>
 
 // 파라미터로 주어지는 문자열은 const로 주어집니다. 변경하려면 문자열을 복사해서 사용하세요.
 char* solution(const char* s) {
     // return 값은 malloc 등 동적 할당을 사용해주세요. 할당 길이는 상황에 맞게 변경해주세요.
-    char* answer;
-    
-    int length= strlen(s);
-    
-    if(length%2) {
-        answer = (char *)malloc(sizeof(char) * 2);
-        answer[0]= s[length/2];
-        answer[1]='\0';
-    }
-    else {
-        answer = (char *)malloc(sizeof(char) * 3);
-        answer[0] = s[length/2-1];
-        answer[1] = s[length/2];
-        answer[2]='\0';
-    }
-    
-    return answer;
+char* answer = (char*)malloc(1);
+    char arr[strlen(s)];
+    char arrs[3];
+    strcpy(arr, s);
 
+    int k = strlen(s);
+
+    int i = 0, j = 0;
+
+    if(k % 2 == 0) {
+        j = k / 2, i = j - 1;
+        arrs[0] = arr[i];
+        arrs[1] = arr[j];
+    } else {
+        i = k /2;
+        arrs[0] = arr[i];
+    }
+
+    strcpy(answer, arrs);
+
+    return answer;
 }
