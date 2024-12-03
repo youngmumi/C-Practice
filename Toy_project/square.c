@@ -1,4 +1,4 @@
-//입체 정사각면체 돌아가는 모습 렌더링
+//입체 정육면체 돌아가는 모습 렌더링
 
 #include <stdio.h>
 #include <string.h>
