@@ -1,3 +1,5 @@
+//입력된 숫자대로 하트 모양 출력
+
 #include <stdio.h>
 
 int main() {
