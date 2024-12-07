@@ -15,7 +15,6 @@ int PrimeNumber(sum){
     return true;
 }
 
-// nums_len은 배열 nums의 길이입니다.
 int solution(int nums[], size_t nums_len) {
     int answer = 0;
     int sum=0;
