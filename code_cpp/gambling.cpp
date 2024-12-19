@@ -9,21 +9,20 @@ int main() {
     const int targetMoney = 250;
     const int numSimulations = 1000;  
 
-    cout << "�ʱ� �ݾ� $50\n��ǥ �ݾ� $250\n" << endl;
+    cout << "\n" << endl;
 
-    srand(NULL);  
+    srand(time(0));  // 난수 초기화
 
     int successCount = 0;
 
     for (int i = 0; i < numSimulations; i++) {
         int cash = startingMoney;
 
-        while (cash > 0 && cash < targetMoney) 
+        while (cash > 0 && cash < targetMoney) {
             if ((double)rand() / RAND_MAX < 0.5) {
-                cash++;  
-            }
-            else {
-                cash--;  
+                cash++;  // 승리 시 현금 증가
+            } else {
+                cash--;  // 패배 시 현금 감소
             }
         }
 
@@ -32,11 +31,12 @@ int main() {
         }
     }
 
-    float successProbability = static_cast<double>(successCount) / numSimulations;
+    float successProbability = static_cast<float>(successCount) / numSimulations;
 
-    cout << "��ǥ �ݾ� " << targetMoney << "�� �����ϴ� Ȯ��: " << successProbability * 100 << "%" << endl;
+    cout << "성공률: " << successProbability * 100 << "%" << endl;
 
     system("pause");
 
     return 0;
 }
+
